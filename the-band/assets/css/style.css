@@ -28,6 +28,9 @@ html {
     display: inline-block;
     margin-top: 15px;
     border: none;
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .btn:hover {
@@ -66,7 +69,8 @@ html {
 }
 
 .col-3 {
-    width: calc(100% / 3);
+    /* width: calc(100% / 3); */
+    width: 33.33333%;
 } 
 
 .text-center {
@@ -79,6 +83,10 @@ html {
 
 .mt-16 {
     margin-top: 16px !important;
+}
+
+.mt-32 {
+    margin-top: 32px !important;
 }
 
 /* Main */
@@ -136,16 +144,32 @@ html {
     font-size: 14px;
 }
 
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 21px; 
+}
+
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
 }
 
 #header .search-btn:hover {
     background-color: #f44336;
     cursor: pointer;
 }
+#header .mobile-menu-btn:hover .menu-icon {
+    color: #000;
+}
 
+#header .menu-icon,
 #header .search-icon {
     color: #ffff;
     font-size: 20px;
@@ -174,7 +198,7 @@ html {
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background: url('/html-css/practice/the-band/assets/img/slider/img_ch.jpg') top center / cover no-repeat;
+    background: url('../img/slider/img_ch.jpg') top center / cover no-repeat;
 }
 
 #slider .text-content {
@@ -195,15 +219,19 @@ html {
 #slider .text-desc {
     font-size: 15px;
     margin-top: 25px;
+    text-shadow: 0 0 1px #000;
 }
 
 /* #content {} */
 
 #content .content-section {
     width: 800px;
+    max-width: 100%;
     padding: 64px 0px 112px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading {
@@ -229,7 +257,7 @@ html {
 }
 
 #content .members-list {
-    margin-top: 48px;
+    margin-top: 32px;
     overflow: hidden;
 }
 
@@ -328,6 +356,15 @@ html {
 .contact-info i[class*="ti-"] {
     display: inline-block;
     width: 30px;
+}
+
+.contact-info a {
+    color: #101aef;
+    opacity: 0.8;
+}
+
+.contact-info a:hover {
+    opacity: 1;
 }
 
 .contact-form {
@@ -497,5 +534,106 @@ html {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Responsive */
+/*  Tablet & mobile */
+@media (max-width: 63.9375em) {
+    .btn {
+        padding: 15px 16px;
+    }   
+
+    #nav .subnav a {
+        padding: 5px 12px;
+    }
+
+    .contact-form .form-control {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .contact-info {
+        line-height: 2;
+    }
+
+    .contact-submit-btn {
+        font-size: 16px;
+    }
+
+    .socials-list {
+        font-size: 48px;
+    }
+
+    #footer .socials-list a {
+        margin: 0 8px;
+    }
+
+    #footer .copyright a {
+        padding: 12px 0;
+        display: inline-block;
+    }
+}
+
+/* Tablet */ 
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .s-full-width,
+    .s-col-full {
+        width: 100% !important;
+    }
+
+    .s-mt-8 {
+        margin-top: 8px !important;
+    }
+
+    #header {
+        /* height: auto; */
+        overflow: hidden;
+    }
+
+    #header .mobile-menu-btn  {
+        display: block;
+    }
+
+    #header .search-btn {
+        display: none;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    #nav > li:nth-child(1) {
+        display: inline-block;
+    }
+
+    #nav li a {
+        padding: 1px 24px;
+    }
+
+    #nav > li {
+        display: block;
+    }
+
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 41px;
+    }
+
+    #content .member-img {
+        width: 60%;
+    }
+
+    .contact-form {
+        margin-top: 32px;
     }
 }
